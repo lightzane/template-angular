@@ -16,10 +16,19 @@
     max-width: 90%;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 401px) {
     // when device width is greater than and equal to 401px
     .example-card {
         margin: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    // when device is less than and equal to 400px
+    .button-group {
+        button {
+            width: 100%;
+        }
     }
 }
 

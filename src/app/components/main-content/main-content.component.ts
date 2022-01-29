@@ -1,8 +1,9 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { listAnim, slideIn } from '../../my-animations';
-import { SampleDialogComponent } from '../sample-dialog/sample-dialog.component';
+import { SampleDialogComponent } from '../../shared/dialogs/sample-dialog/sample-dialog.component';
 
 @Component({
   selector: 'app-main-content',
@@ -16,10 +17,18 @@ export class MainContentComponent implements OnInit {
 
   constructor(
     private readonly snackbar: MatSnackBar,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
+    private readonly clipboard: Clipboard
   ) { }
 
   ngOnInit(): void { }
+
+  copy(newClipboard: boolean): void {
+    const suffix = newClipboard ? ' programatically...' : '';
+
+    if (newClipboard) this.clipboard.copy('I was copied programatically');
+    this.snackbar.open('Copied to clipboard' + suffix, 'WOW');
+  }
 
   showDialog(): void {
     const dialogRef = this.dialog.open(SampleDialogComponent, {

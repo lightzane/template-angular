@@ -1,11 +1,11 @@
 <div class="main-content container">
     <div class="container">
         <h1>Heading 1</h1>
-        <div class="container">
+        <div class="container button-group">
             <button mat-raised-button color="primary" (click)="toggle()">Toggle Content</button>
             <button mat-raised-button color="accent" (click)="showSnackbar()">Show Snackbar</button>
             <button mat-stroked-button color="primary" (click)="showDialog()">Show Dialog</button>
-            <button mat-raised-button color="warn" (click)="shown = !shown">Show Card</button>
+            <button mat-raised-button color="warn" (click)="shown = !shown">Toggle Card</button>
         </div>
     </div>
 
@@ -22,7 +22,8 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis illo itaque mollitia, eius minima vel nam earum consectetur. Quo molestiae porro quisquam repellendus eos sequi, aspernatur dolores expedita. Dolorem, maxime.</p>
             </mat-card-content>
             <mat-card-actions style="display: flex">
-                <button mat-button color="primary">LEARN MORE</button>
+                <button mat-button color="primary" cdkCopyToClipboard="I was copied via cdkCopyToClipboard!" (click)="copy(false)">LEARN MORE</button>
+                <button mat-button (click)="copy(true)">SHARE</button>
                 <div class="spacer"></div>
                 <button mat-icon-button>
                     <mat-icon>favorite_outline</mat-icon>
