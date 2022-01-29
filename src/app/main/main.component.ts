@@ -1,6 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -23,7 +24,7 @@ export class MainComponent implements OnInit {
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
       .pipe(
         map((bp) => bp.matches),
-        shareReplay()
+        shareReplay(1) // share only the last boolean value
       );
 
     const theme = localStorage.getItem('theme');
@@ -46,6 +47,12 @@ export class MainComponent implements OnInit {
       this.overlayContainer.getContainerElement().classList.remove('dark-theme');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  toggleSidenav(sidenav: MatSidenav): void {
+    this.isHandset$.subscribe((bool) => {
+      if (bool === true) sidenav.toggle();
+    });
   }
 
   toggleTheme(): void {

@@ -10,7 +10,7 @@ import { MainComponent } from './main/main.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { SNACKBAR_CONFIG } from './shared/constants/snackbar-config';
-import { SampleDialogComponent } from './shared/dialogs/sample-dialog/sample-dialog.component';
+import { SampleDialogComponent } from './components/dialogs/sample-dialog/sample-dialog.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { DIALOG_CONFIG } from './shared/constants/dialog-config';
 import { ReactiveFormsModule } from '@angular/forms';

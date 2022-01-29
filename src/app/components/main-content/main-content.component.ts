@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { listAnim, slideIn } from '../../my-animations';
-import { SampleDialogComponent } from '../../shared/dialogs/sample-dialog/sample-dialog.component';
+import { SampleDialogComponent } from '../dialogs/sample-dialog/sample-dialog.component';
 
 @Component({
   selector: 'app-main-content',
