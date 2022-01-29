@@ -1,0 +1,47 @@
+.main {
+    height: 100%;
+}
+
+.main-toolbar {
+    top: 0;
+    position: sticky;
+    z-index: 2;
+}
+
+.mat-sidenav-container {
+    height: 100%;
+}
+
+.mat-sidenav {
+    width: 256px;
+}
+
+.mat-list-item {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 5px auto;
+    width: 90% !important;
+
+    span {
+        margin: 0 10px;
+    }
+}
+
+.mat-list-item.active {
+    background-color: var(--color-accent) !important;
+    color: var(--color-accent-contrast) !important;
+}
+
+.spacer {
+    flex: 1;
+}
+
+p {
+    white-space: pre-wrap; // in HTML, display "new lines (\n)" from textarea input
+}
+
+@media screen and (max-width: 400px) {
+    .mat-sidenav {
+        width: 100%;
+    }
+}
