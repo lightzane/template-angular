@@ -12,6 +12,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
+import { CdkAccordionModule } from "@angular/cdk/accordion";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatButtonModule } from "@angular/material/button";
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CdkAccordionModule
   ]
 })
 export class HomeModule { }

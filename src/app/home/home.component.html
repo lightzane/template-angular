@@ -7,20 +7,84 @@
                 <mat-icon>arrow_back</mat-icon>
             </button>
         </mat-toolbar>
-        <mat-nav-list>
-            <a mat-list-item routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
+        <!-- <mat-nav-list cdkAccordion>
+            <a mat-list-item cdkAccordionItem routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
                 <mat-icon>home</mat-icon>
                 <span>Home</span>
             </a>
-            <a mat-list-item routerLink="card" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+            <a mat-list-item cdkAccordionItem routerLinkActive="active" (click)="toggleSidenav(sidenav)">
                 <mat-icon>image</mat-icon>
                 <span>Card</span>
             </a>
             <hr />
-            <a mat-list-item routerLink="example" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+            <a mat-list-item cdkAccordionItem routerLinkActive="active" (click)="toggleSidenav(sidenav)">
                 <mat-icon>face</mat-icon>
                 <span>Example</span>
             </a>
+        </mat-nav-list> -->
+        <mat-nav-list>
+            <cdk-accordion>
+                <!-- Link 1 -->
+                <cdk-accordion-item #accordion1="cdkAccordionItem">
+                    <!-- Accordion Header -->
+                    <a mat-list-item (click)="accordion1.toggle()">
+                        <mat-icon>home</mat-icon>
+                        <span>Link 1</span>
+                        <mat-icon class="chevron">
+                            {{ accordion1.expanded ? "keyboard_arrow_down" : "keyboard_arrow_left" }}
+                        </mat-icon>
+                    </a>
+                    <!-- Accordion Content -->
+                    <div [style.display]="accordion1.expanded ? '' : 'none'">
+                        <a mat-list-item routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
+                            <span class="m-50">Home</span>
+                        </a>
+                        <a mat-list-item routerLink="card" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                            <span class="m-50">Card</span>
+                        </a>
+                    </div>
+                </cdk-accordion-item>
+                <!-- Link 2 -->
+                <cdk-accordion-item #accordion2="cdkAccordionItem">
+                    <!-- Accordion Header -->
+                    <a mat-list-item (click)="accordion2.toggle()">
+                        <mat-icon>image</mat-icon>
+                        <span>Link 2</span>
+                        <mat-icon class="chevron">
+                            {{ accordion2.expanded ? "keyboard_arrow_down" : "keyboard_arrow_left" }}
+                        </mat-icon>
+                    </a>
+                    <!-- Accordion Content -->
+                    <div [style.display]="accordion2.expanded ? '' : 'none'">
+                        <a mat-list-item routerLink="example" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                            <span class="m-50">Example</span>
+                        </a>
+                    </div>
+                </cdk-accordion-item>
+                <!-- Link 3 -->
+                <cdk-accordion-item #accordion3="cdkAccordionItem">
+                    <!-- Accordion Header -->
+                    <a mat-list-item (click)="accordion3.toggle()">
+                        <mat-icon>face</mat-icon>
+                        <span>Link 3</span>
+                        <mat-icon class="chevron">
+                            {{ accordion2.expanded ? "keyboard_arrow_down" : "keyboard_arrow_left" }}
+                        </mat-icon>
+                    </a>
+                    <!-- Accordion Content -->
+                    <div [style.display]="accordion3.expanded ? '' : 'none'">
+                        <a mat-list-item>
+                            <span class="m-50">Item 1</span>
+                        </a>
+                        <a mat-list-item>
+                            <span class="m-50">Item 2</span>
+                        </a>
+                        <a mat-list-item>
+                            <span class="m-50">Item 3</span>
+                        </a>
+                    </div>
+                </cdk-accordion-item>
+            </cdk-accordion>
         </mat-nav-list>
     </mat-sidenav>
 
