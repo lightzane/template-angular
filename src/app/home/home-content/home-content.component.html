@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Home Heading</h1>
+    <button mat-raised-button color="primary" (click)="toggle()">Toggle Content</button>
+
+    <div class="container" [@listAnim]="items.length">
+        <!-- trigger "@listAnim" is activated everytime it is set to true -->
+        <div *ngFor="let item of items">
+            <div class="container">
+                <h2>Sample Content</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga inventore nisi quo explicabo iure! Similique dolorem, dolorum assumenda nam laudantium rerum! Optio veritatis voluptatem modi tempora, sint quasi excepturi.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora aspernatur expedita laudantium dolorum, totam voluptas sint obcaecati inventore officia at deleniti eveniet, labore ullam doloribus repellendus nam! Nulla, debitis.</p>
+            </div>
+        </div>
+    </div>
+</div>
