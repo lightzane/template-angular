@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { SampleDialogComponent } from '../../components/dialogs/sample-dialog/sample-dialog.component';
 
 @Component({
@@ -11,8 +10,7 @@ import { SampleDialogComponent } from '../../components/dialogs/sample-dialog/sa
 export class ExampleComponent implements OnInit {
 
   constructor(
-    private dialog: MatDialog,
-    private snackbar: MatSnackBar
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -29,10 +27,6 @@ export class ExampleComponent implements OnInit {
     dialogRef.afterClosed().subscribe((data) => {
       if (data) alert(JSON.stringify(data, null, 4));
     });
-  }
-
-  showSnackbar(): void {
-    this.snackbar.open('Here I am', 'NICE');
   }
 
 }

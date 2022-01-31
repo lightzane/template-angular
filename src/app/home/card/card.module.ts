@@ -5,6 +5,7 @@ import { CardComponent } from './card.component';
 import { MatCardModule } from "@angular/material/card";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     MatSnackBarModule,
     MatButtonModule,
     RouterModule.forChild(routes),
+    ClipboardModule
   ],
 })
 export class CardModule { }
