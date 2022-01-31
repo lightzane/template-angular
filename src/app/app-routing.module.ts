@@ -15,7 +15,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeContentComponent,
+        loadChildren: () => import('./home/home-content/home-content.module').then(m => m.HomeContentModule),
+        pathMatch: 'full'
       },
       {
         path: 'card',

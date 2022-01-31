@@ -13,8 +13,7 @@ import { CdkAccordionModule } from "@angular/cdk/accordion";
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    HomeContentComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +23,7 @@ import { CdkAccordionModule } from "@angular/cdk/accordion";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    CdkAccordionModule
+    CdkAccordionModule,
   ]
 })
 export class HomeModule { }
