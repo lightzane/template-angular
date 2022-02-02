@@ -1,11 +1,11 @@
 <div class="container">
-    <h1>Card Heading</h1>
+    <h1 class="mt-3">Card Heading</h1>
     <button mat-raised-button color="warn" (click)="shown = !shown">Toggle Card</button>
 </div>
 
 <!-- Card -->
 <div class="container" *ngIf="shown" @slideIn>
-    <mat-card class="example-card mat-elevation-z4">
+    <mat-card class="example-card mat-elevation-z4 mx-auto mt-3">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>IU 아이유</mat-card-title>
