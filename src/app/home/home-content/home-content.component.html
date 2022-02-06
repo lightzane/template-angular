@@ -1,6 +1,14 @@
 <div class="container">
     <h1 class="mt-3">Home Heading</h1>
-    <button mat-raised-button color="primary" (click)="toggle()">Toggle Content</button>
+    <p><button mat-raised-button color="primary" (click)="toggle()">Toggle Content</button></p>
+    <p><button mat-stroked-button color="accent" (click)="isNgContainerDisplayed = !isNgContainerDisplayed">Toggle ng-container</button></p>
+
+    <ng-container *ngIf="isNgContainerDisplayed; else lastResort">
+        <p>This is inside <code>ng-container</code></p>
+    </ng-container>
+    <ng-template #lastResort>
+        <p>This is inside <code>ng-template</code></p>
+    </ng-template>
 
     <div class="container mt-3" [@listAnim]="items.length">
         <!-- trigger "@listAnim" is activated everytime it is set to true -->

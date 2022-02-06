@@ -10,6 +10,7 @@ import { listAnim, slideIn } from '../../my-animations';
 export class HomeContentComponent implements OnInit {
   shown = false;
   items = [1, 2, 3];
+  isNgContainerDisplayed = true;
 
   constructor() { }
 

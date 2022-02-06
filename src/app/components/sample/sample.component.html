@@ -1,0 +1,27 @@
+<p class="mt-5">sample works!</p>
+<p>This is written inside <code>sample.component.html</code> and below this <code>&lt;p&gt;</code> tag is the <code>ng-content</code></p>
+<hr />
+
+<ng-content></ng-content>
+<p>This is written inside <code>sample.component.html</code> and below this <code>&lt;p&gt;</code> tag are <code>ng-content</code>s with <code>select</code> attributes</p>
+
+<hr />
+<div class="container m-2">
+    <h3>First</h3>
+    <div class="container mb-5">
+        <p>Displayed via <code>ng-content</code> inside the <code>sample.component.html</code></p>
+        <ng-content select=".first"></ng-content>
+    </div>
+
+    <h3>Second</h3>
+    <div class="container mb-5">
+        <p>Displayed via <code>ng-content</code> inside the <code>sample.component.html</code></p>
+        <ng-content select=".second"></ng-content>
+    </div>
+
+    <h3>Third</h3>
+    <div class="container mb-5">
+        <p>Displayed via <code>ng-content</code> inside the <code>sample.component.html</code></p>
+        <ng-content select=".third"></ng-content>
+    </div>
+</div>

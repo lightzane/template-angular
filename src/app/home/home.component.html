@@ -1,110 +1,111 @@
-<mat-sidenav-container class="mat-app-background" [ngClass]="{ 'dark-theme': isDark }">
-    <!-- Sidenav -->
-    <mat-sidenav #sidenav [opened]="(isHandset$ | async) === false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
-        <!--  -->
-        <mat-toolbar style="background: inherit">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>arrow_back</mat-icon>
-            </button>
-        </mat-toolbar>
-        <!-- <mat-nav-list cdkAccordion>
-            <a mat-list-item cdkAccordionItem routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
-                <mat-icon>home</mat-icon>
-                <span>Home</span>
-            </a>
-            <a mat-list-item cdkAccordionItem routerLinkActive="active" (click)="toggleSidenav(sidenav)">
-                <mat-icon>image</mat-icon>
-                <span>Card</span>
-            </a>
-            <hr />
-            <a mat-list-item cdkAccordionItem routerLinkActive="active" (click)="toggleSidenav(sidenav)">
-                <mat-icon>face</mat-icon>
-                <span>Example</span>
-            </a>
-        </mat-nav-list> -->
-        <mat-nav-list>
-            <cdk-accordion>
-                <!-- Link 1 -->
-                <cdk-accordion-item #accordion1="cdkAccordionItem">
-                    <!-- Accordion Header -->
-                    <a mat-list-item (click)="accordion1.toggle()">
-                        <mat-icon>home</mat-icon>
-                        <span>Link 1</span>
-                        <span class="spacer"></span>
-                        <mat-icon>
-                            {{ accordion1.expanded ? "keyboard_arrow_down" : "keyboard_arrow_left" }}
-                        </mat-icon>
-                    </a>
-                    <!-- Accordion Content -->
-                    <div [style.display]="accordion1.expanded ? '' : 'none'">
-                        <a mat-list-item routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
-                            <span>Home</span>
+<div class="home-wrapper mat-app-background" [ngClass]="{ 'dark-theme': isDark }">
+    <!-- Toolbar -->
+    <mat-toolbar class="home-toolbar mat-elevation-z4" color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <div class="spacer"></div>
+        <button mat-icon-button (click)="toggleTheme()">
+            <mat-icon>{{ isDark ? "light_mode" : "dark_mode" }} </mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <!-- Sidenav -->
+        <mat-sidenav #sidenav [opened]="(isHandset$ | async) === false" [mode]="(isHandset$ | async) ? 'over' : 'side'" fixedInViewport>
+            <!-- Toolbar as Spacing -->
+            <mat-toolbar style="background: inherit">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+            </mat-toolbar>
+            <!-- <mat-nav-list>
+                <a mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
+                    <mat-icon>home</mat-icon>
+                    <span>Home</span>
+                </a>
+                <a mat-list-item routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                    <mat-icon>image</mat-icon>
+                    <span>Card</span>
+                </a>
+                <mat-divider></mat-divider>
+                <a mat-list-item routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                    <mat-icon>face</mat-icon>
+                    <span>Example</span>
+                </a>
+            </mat-nav-list> -->
+            <mat-nav-list>
+                <cdk-accordion>
+                    <!-- Link 1 -->
+                    <cdk-accordion-item #accordion1="cdkAccordionItem">
+                        <!-- Accordion Header -->
+                        <a mat-list-item (click)="accordion1.toggle()">
+                            <mat-icon>home</mat-icon>
+                            <span>Link 1</span>
+                            <span class="spacer"></span>
+                            <mat-icon>
+                                {{ accordion1.expanded ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
+                            </mat-icon>
                         </a>
-                        <a mat-list-item routerLink="card" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
-                            <span>Card</span>
+                        <!-- Accordion Content -->
+                        <div [style.display]="accordion1.expanded ? '' : 'none'">
+                            <a mat-list-item routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
+                                <span>Home</span>
+                            </a>
+                            <a mat-list-item routerLink="card" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                                <span>Card</span>
+                            </a>
+                        </div>
+                    </cdk-accordion-item>
+                    <!-- Link 2 -->
+                    <cdk-accordion-item #accordion2="cdkAccordionItem">
+                        <!-- Accordion Header -->
+                        <a mat-list-item (click)="accordion2.toggle()">
+                            <mat-icon>image</mat-icon>
+                            <span>Link 2</span>
+                            <span class="spacer"></span>
+                            <mat-icon>
+                                {{ accordion2.expanded ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
+                            </mat-icon>
                         </a>
-                    </div>
-                </cdk-accordion-item>
-                <!-- Link 2 -->
-                <cdk-accordion-item #accordion2="cdkAccordionItem">
-                    <!-- Accordion Header -->
-                    <a mat-list-item (click)="accordion2.toggle()">
-                        <mat-icon>image</mat-icon>
-                        <span>Link 2</span>
-                        <span class="spacer"></span>
-                        <mat-icon>
-                            {{ accordion2.expanded ? "keyboard_arrow_down" : "keyboard_arrow_left" }}
-                        </mat-icon>
-                    </a>
-                    <!-- Accordion Content -->
-                    <div [style.display]="accordion2.expanded ? '' : 'none'">
-                        <a mat-list-item routerLink="example" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
-                            <span>Example</span>
+                        <!-- Accordion Content -->
+                        <div [style.display]="accordion2.expanded ? '' : 'none'">
+                            <a mat-list-item routerLink="example" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                                <span>Example</span>
+                            </a>
+                        </div>
+                    </cdk-accordion-item>
+                    <!-- Link 3 -->
+                    <cdk-accordion-item #accordion3="cdkAccordionItem">
+                        <!-- Accordion Header -->
+                        <a mat-list-item (click)="accordion3.toggle()">
+                            <mat-icon>face</mat-icon>
+                            <span>Link 3</span>
+                            <span class="spacer"></span>
+                            <mat-icon>
+                                {{ accordion3.expanded ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
+                            </mat-icon>
                         </a>
-                    </div>
-                </cdk-accordion-item>
-                <!-- Link 3 -->
-                <cdk-accordion-item #accordion3="cdkAccordionItem">
-                    <!-- Accordion Header -->
-                    <a mat-list-item (click)="accordion3.toggle()">
-                        <mat-icon>face</mat-icon>
-                        <span>Link 3</span>
-                        <span class="spacer"></span>
-                        <mat-icon>
-                            {{ accordion3.expanded ? "keyboard_arrow_down" : "keyboard_arrow_left" }}
-                        </mat-icon>
-                    </a>
-                    <!-- Accordion Content -->
-                    <div [style.display]="accordion3.expanded ? '' : 'none'">
-                        <a mat-list-item>
-                            <span>Item 1</span>
-                        </a>
-                        <a mat-list-item>
-                            <span>Item 2</span>
-                        </a>
-                        <a mat-list-item>
-                            <span>Item 3</span>
-                        </a>
-                    </div>
-                </cdk-accordion-item>
-            </cdk-accordion>
-        </mat-nav-list>
-    </mat-sidenav>
+                        <!-- Accordion Content -->
+                        <div [style.display]="accordion3.expanded ? '' : 'none'">
+                            <a mat-list-item>
+                                <span>Item 1</span>
+                            </a>
+                            <a mat-list-item>
+                                <span>Item 2</span>
+                            </a>
+                            <a mat-list-item>
+                                <span>Item 3</span>
+                            </a>
+                        </div>
+                    </cdk-accordion-item>
+                </cdk-accordion>
+            </mat-nav-list>
+        </mat-sidenav>
 
-    <mat-sidenav-content>
-        <!-- Toolbar -->
-        <mat-toolbar class="home-toolbar mat-elevation-z4" color="primary">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span>My App</span>
-            <div class="spacer"></div>
-            <button mat-icon-button (click)="toggleTheme()">
-                <mat-icon>{{ isDark ? "light_mode" : "dark_mode" }} </mat-icon>
-            </button>
-        </mat-toolbar>
-
-        <!-- Content -->
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+        <mat-sidenav-content>
+            <!-- Content -->
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

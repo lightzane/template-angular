@@ -8,6 +8,7 @@ import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
+import { SampleComponent } from '../../components/sample/sample.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ExampleComponent,
-    SampleDialogComponent
+    SampleDialogComponent,
+    SampleComponent
   ],
   imports: [
     CommonModule,
