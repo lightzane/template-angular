@@ -28,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'scrollspy',
-        loadChildren: () => import('./home/scroll-spy/scroll-spy.module').then(m => m.ScrollSpyModule)
+        loadChildren: () => import('./home/scroll-spy-container/scroll-spy-container.module').then(m => m.ScrollSpyContainerModule)
       }
     ]
   }
