@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { HomeContentComponent } from './home-content/home-content.component';
 import { RouterModule } from '@angular/router';
 
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -13,7 +12,7 @@ import { CdkAccordionModule } from "@angular/cdk/accordion";
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,

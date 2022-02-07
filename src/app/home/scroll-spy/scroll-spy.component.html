@@ -1,0 +1,35 @@
+<div class="container my-3">
+    <div class="row justify-content-center">
+        <div class="w-25 position-fixed end-0 d-none d-md-block">
+            <h3>Contents</h3>
+            <div class="container">
+                <mat-list>
+                    <mat-list-item [class.anchored]="currentSection === 'section' + z" *ngFor="let z of lorems">
+                        <a [routerLink]="['./']" [fragment]="'section' + z">Section {{ z }}</a>
+                        <!-- 
+                            ['./'] means to get current path
+                            /home/scrollspy
+
+                            fragment = #
+                            /home/scrollspy#section1
+                        -->
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h1 class="d-md-none">Scrollspy Content Guide will NOT show in smaller devices</h1>
+            <section #scrollSpy [id]="'section' + x" *ngFor="let x of lorems" class="container mb-5">
+                <h2>Heading for Section {{ x }}</h2>
+                <p *ngFor="let y of lorems">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar lacus eu sapien fermentum, quis ultricies enim feugiat. Sed laoreet sem ac lacus aliquam, ut vehicula nisl ultricies. Donec at orci non ligula luctus venenatis. Nulla pretium mollis augue quis semper. Donec interdum, est ut condimentum consectetur, turpis sem maximus purus, et eleifend mi purus nec arcu. Etiam in erat mi. Mauris tristique magna ligula,
+                    sed volutpat mi sodales vitae. Mauris mollis eget arcu sed placerat
+                </p>
+            </section>
+        </div>
+        <!-- This can serve as spacing, if opt to delete then remove .justify-content-center in .row -->
+        <div class="col-md-2 d-none d-md-block">
+            <!-- <h3>Contents</h3> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+section {
+    /* Prevent content from being hidden underneath a fixed header by using scroll-margin-top */
+    scroll-margin-top: 5rem; /* whatever is a nice number that gets you past the header */
+}
+
+p {
+    text-indent: 1.5rem;
+    text-align: justify;
+}
+
+a {
+    &:hover {
+        text-decoration: underline;
+    }
+    text-decoration: none;
+}
+
+.mat-list-item {
+    &.anchored {
+        border-left: 3px solid var(--mat-primary);
+        a {
+            color: var(--mat-accent) !important;
+        }
+    }
+    border-left: 2px solid #dbdbdb;
+    a {
+        color: var(--mat-primary) !important;
+    }
+}
