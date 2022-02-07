@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
 import { SampleComponent } from '../../components/sample/sample.component';
+import { MyHighlightOnHoverDirective } from '../../shared/directives/my-highlight-on-hover.directive';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   declarations: [
     ExampleComponent,
     SampleDialogComponent,
-    SampleComponent
+    SampleComponent,
+    MyHighlightOnHoverDirective // my custom directive
   ],
   imports: [
     CommonModule,
