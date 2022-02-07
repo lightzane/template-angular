@@ -3,6 +3,13 @@
     <button mat-raised-button color="accent" (click)="showDialog()">Show Dialog</button>
 </div>
 
+<div class="container mt-3">
+    <h2>Sample Directives</h2>
+    <h3>Try hover on the 2 lines below</h3>
+    <p appMyHighlightOnHover>Paragraph tag with <code>appMyHighlightOnHover</code> custom directive</p>
+    <p appMyHighlightOnHover="#3498db">Paragraph tag with <code>appMyHighlightOnHover="#3498db"</code> custom directive</p>
+</div>
+
 <div class="container">
     <app-sample>
         <p>Content inside <code>&lt;app-sample&gt;&lt;/app-sample&gt;</code> but written inside <code>example.component.html</code></p>
