@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="mt-3">Example Heading</h1>
+    <button mat-raised-button color="accent" (click)="showDialog()">Show Dialog</button>
+</div>
+
+<div class="container">
+    <app-sample>
+        <p>Content inside <code>&lt;app-sample&gt;&lt;/app-sample&gt;</code> but written inside <code>example.component.html</code></p>
+        <div class="second">This is a content from <code>example.component.html</code> with a class of <code>.second</code> but declared as first <code>div</code></div>
+        <div class="third">This is a content from <code>example.component.html</code> with a class of <code>.third</code> but declared as second <code>div</code></div>
+        <div class="first">This is a content from <code>example.component.html</code> with a class of <code>.first</code> but declared as last <code>div</code></div>
+    </app-sample>
+</div>
+
+<div class="container">
+    <app-sample>
+        <div class="third">Written as first</div>
+        <div class="second">Written as second</div>
+        <div class="first">Written as last</div>
+    </app-sample>
+</div>
+
+<div class="container">
+    <app-sample>
+        <div class="first">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione doloribus facilis commodi est nam pariatur, officia quis nemo, distinctio atque, veniam velit odio reprehenderit enim adipisci provident quasi similique. Modi!</p>
+        </div>
+        <div class="second">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione doloribus facilis commodi est nam pariatur, officia quis nemo, distinctio atque, veniam velit odio reprehenderit enim adipisci provident quasi similique. Modi!</p>
+        </div>
+        <div class="third">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione doloribus facilis commodi est nam pariatur, officia quis nemo, distinctio atque, veniam velit odio reprehenderit enim adipisci provident quasi similique. Modi!</p>
+        </div>
+    </app-sample>
+</div>

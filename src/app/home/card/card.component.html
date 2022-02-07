@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="mt-3">Card Heading</h1>
+    <button mat-raised-button color="warn" (click)="shown = !shown">Toggle Card</button>
+</div>
+
+<!-- Card -->
+<div class="container" *ngIf="shown" @slideIn>
+    <mat-card class="example-card mat-elevation-z4 mx-auto mt-3">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>IU 아이유</mat-card-title>
+            <mat-card-subtitle>Lee Ji Eun (이지은)</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://play-lh.googleusercontent.com/XranFJGXPq2FLccLe8DiQ-O9UpYBbUoKIDqZ7LKB2t7wlc9TUwhriujLELd6djTUVkA" />
+        <mat-card-content>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis illo itaque mollitia, eius minima vel nam earum consectetur. Quo molestiae porro quisquam repellendus eos sequi, aspernatur dolores expedita. Dolorem, maxime.</p>
+        </mat-card-content>
+        <mat-card-actions style="display: flex">
+            <button mat-button color="primary" cdkCopyToClipboard="I was copied via cdkCopyToClipboard!" (click)="copy(false)">LEARN MORE</button>
+            <button mat-button (click)="copy(true)">SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
