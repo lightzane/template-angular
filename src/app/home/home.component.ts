@@ -57,18 +57,20 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  closeSidenav(): void {
+    if (this.isHandset) {
+      this.sidenav.toggle();
+    } else {
+      this.isFullWidth = false;
+    }
+  }
+
   customToggleSidenav(): void {
     if (this.isHandset) {
       this.sidenav.toggle();
     } else {
       this.isFullWidth = !this.isFullWidth;
     }
-  }
-
-  toggleSidenav(sidenav: MatSidenav): void {
-    this.isHandset$.subscribe((bool) => {
-      if (bool === true) sidenav.toggle();
-    });
   }
 
   toggleTheme(): void {

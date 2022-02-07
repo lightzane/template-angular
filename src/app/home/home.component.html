@@ -12,7 +12,7 @@
     </mat-toolbar>
     <mat-sidenav-container>
         <!-- Sidenav -->
-        <mat-sidenav #sidenav [ngClass]="{ 'full-width': isFullWidth, 'mat-elevation-z1': (isHandset$ | async) === false }" [opened]="(isHandset$ | async) === false" [mode]="(isHandset$ | async) ? 'over' : 'side'" fixedInViewport>
+        <mat-sidenav #sidenav fixedInViewport [ngClass]="{ 'full-width': isFullWidth, 'mat-elevation-z1': (isHandset$ | async) === false }" [opened]="(isHandset$ | async) === false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
             <!-- Toolbar as Spacing -->
             <mat-toolbar style="background: inherit"></mat-toolbar>
             <mat-nav-list>
@@ -20,16 +20,16 @@
                     Reminder that this HomeComponent is already a Child route so..
                     absolute path is give "/home" instead of "home" since it will duplicate like "/home/home" 
                 -->
-                <a mat-list-item routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleSidenav(sidenav)">
+                <a mat-list-item routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeSidenav()">
                     <mat-icon>home</mat-icon>
                     <span *ngIf="isFullWidth">Home</span>
                 </a>
-                <a mat-list-item routerLink="card" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                <a mat-list-item routerLink="card" routerLinkActive="active" (click)="closeSidenav()">
                     <mat-icon>image</mat-icon>
                     <span *ngIf="isFullWidth">Card</span>
                 </a>
                 <mat-divider></mat-divider>
-                <a mat-list-item routerLink="example" routerLinkActive="active" (click)="toggleSidenav(sidenav)">
+                <a mat-list-item routerLink="example" routerLinkActive="active" (click)="closeSidenav()">
                     <mat-icon>face</mat-icon>
                     <span *ngIf="isFullWidth">Example</span>
                 </a>
