@@ -25,6 +25,10 @@ const routes: Routes = [
       {
         path: 'example',
         loadChildren: () => import('./home/example/example.module').then(m => m.ExampleModule)
+      },
+      {
+        path: 'scrollspy',
+        loadChildren: () => import('./home/scroll-spy/scroll-spy.module').then(m => m.ScrollSpyModule)
       }
     ]
   }
