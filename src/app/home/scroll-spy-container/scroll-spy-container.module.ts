@@ -21,4 +21,4 @@ const routes: Routes = [
     MatListModule
   ]
 })
-export class ScrollSpyModule { }
+export class ScrollSpyContainerModule { }
