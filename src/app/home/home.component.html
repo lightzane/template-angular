@@ -10,6 +10,17 @@
             <mat-icon>{{ isDark ? "light_mode" : "dark_mode" }} </mat-icon>
         </button>
     </mat-toolbar>
+    <!-- 
+        Notice: if sidenav should not go over the mat-sidenav-content
+        
+        1. add "autosize" attr in mat-sidenav-container
+        2. remove "fixedInViewport" attr in mat-sidenav
+
+        "autosize" Description:
+        Whether to automatically resize the container whenever the size of any of its drawers changes.
+        Use at your own risk! Enabling this option can cause layout thrashing by measuring the drawers on every change detection cycle. Can be configured globally via the MAT_DRAWER_DEFAULT_AUTOSIZE token.
+        Reference: https://material.angular.io/components/sidenav/api
+    -->
     <mat-sidenav-container>
         <!-- Sidenav -->
         <mat-sidenav #sidenav fixedInViewport [ngClass]="{ 'full-width': isFullWidth, 'mat-elevation-z1': (isHandset$ | async) === false }" [opened]="(isHandset$ | async) === false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
