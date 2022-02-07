@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { fromEvent } from 'rxjs';
 
 @Component({
-  selector: 'app-scroll-spy',
-  templateUrl: './scroll-spy.component.html',
-  styleUrls: ['./scroll-spy.component.scss']
+  selector: 'app-scroll-spy-container',
+  templateUrl: './scroll-spy-container.component.html',
+  styleUrls: ['./scroll-spy-container.component.scss']
 })
-export class ScrollSpyComponent implements OnInit, AfterViewInit {
+export class ScrollSpyContainerComponent implements OnInit, AfterViewInit {
 
   @ViewChildren('scrollSpy') sections: QueryList<ElementRef<HTMLElement>>;
   currentSection: string;

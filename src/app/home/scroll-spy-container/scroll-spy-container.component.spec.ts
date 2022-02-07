@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrollSpyComponent } from './scroll-spy.component';
+import { ScrollSpyContainerComponent } from './scroll-spy-container.component';
 
-describe('ScrollSpyComponent', () => {
-  let component: ScrollSpyComponent;
-  let fixture: ComponentFixture<ScrollSpyComponent>;
+describe('ScrollSpyContainerComponent', () => {
+  let component: ScrollSpyContainerComponent;
+  let fixture: ComponentFixture<ScrollSpyContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScrollSpyComponent ]
+      declarations: [ ScrollSpyContainerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ScrollSpyComponent);
+    fixture = TestBed.createComponent(ScrollSpyContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

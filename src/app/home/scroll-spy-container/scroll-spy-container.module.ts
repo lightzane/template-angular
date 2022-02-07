@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ScrollSpyComponent } from './scroll-spy.component';
+import { ScrollSpyContainerComponent } from './scroll-spy-container.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 
 const routes: Routes = [
   {
     path: '',
-    component: ScrollSpyComponent
+    component: ScrollSpyContainerComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    ScrollSpyComponent
+    ScrollSpyContainerComponent
   ],
   imports: [
     RouterModule.forChild(routes),
