@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-scroll-spy-container',
@@ -8,32 +7,11 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./scroll-spy-container.component.scss']
 })
 export class ScrollSpyContainerComponent implements OnInit, AfterViewInit {
-
-  @ViewChildren('scrollSpy') sections: QueryList<ElementRef<HTMLElement>>;
   currentSection: string;
 
   lorems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  constructor(private route: ActivatedRoute) {
-    fromEvent(document, 'scroll').subscribe(() => {
-      for (let section of this.sections) {
-        const top = window.scrollY;
-        const offset = section.nativeElement.offsetTop;
-        const height = section.nativeElement.offsetHeight;
-        const id = section.nativeElement.getAttribute('id');
-
-        // if (top >= offset && top < offset + height) {
-        //   this.currentSection = id;
-        // }
-
-        if (top >= offset - (height / 5) && top < offset + height) {
-          // ? divide by 5
-          // --> see scroll-spy.component.scss // section { scroll-margin-top: 5rem }
-          this.currentSection = id;
-        }
-      }
-    });
-  }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -46,7 +24,14 @@ export class ScrollSpyContainerComponent implements OnInit, AfterViewInit {
         el.scrollIntoView();
       }
     });
+  }
 
+  /**
+   * Listen to sectionChange event and catches name of the current section
+   * @param sectionName 
+   */
+  updateCurrentSection(sectionName: string): void {
+    this.currentSection = sectionName;
   }
 
 }

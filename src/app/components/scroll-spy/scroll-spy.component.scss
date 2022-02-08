@@ -1,0 +1,4 @@
+section {
+    /* Prevent content from being hidden underneath a fixed header by using scroll-margin-top */
+    scroll-margin-top: 5rem; /* whatever is a nice number that gets you past the header */
+}
