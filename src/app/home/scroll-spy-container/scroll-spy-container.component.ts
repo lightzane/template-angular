@@ -24,6 +24,11 @@ export class ScrollSpyContainerComponent implements OnInit, AfterViewInit {
         el.scrollIntoView();
       }
     });
+
+    // You may notice inaccurate in scrollIntoView()
+    // This is because of the sidenav
+    // When it pushed the sidenav-content, the width gets lesser
+    // and the paragraph content is adjusting which also changes the scroll
   }
 
   /**

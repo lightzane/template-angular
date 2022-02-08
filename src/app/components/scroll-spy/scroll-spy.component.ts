@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ElementRef, ContentChildren, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, QueryList, ElementRef, ContentChildren, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { fromEvent } from 'rxjs';
 
 @Component({
@@ -26,8 +26,6 @@ export class ScrollSpyComponent {
         // }
 
         if (top >= offset - (height / 5) && top < offset + height) {
-          // ? divide by 5
-          // --> see scroll-spy.component.scss // section { scroll-margin-top: 5rem }
           this.sectionChange.emit(id);
         }
       }
