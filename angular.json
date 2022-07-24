@@ -106,6 +106,5 @@
         }
       }
     }
-  },
-  "defaultProject": "template-angular-material"
+  }
 }

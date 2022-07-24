@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import { MatDialogRef } from '@angular/material/dialog';
 
@@ -10,11 +10,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class SampleDialogComponent implements OnInit {
 
-  sampleForm: FormGroup;
+  sampleForm: UntypedFormGroup;
 
   constructor(
     // private dialogRef: MatDialogRef<SampleDialogComponent>,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: { title: string, description: string; }
   ) { }
 
