@@ -23,7 +23,13 @@
     width: 95% !important;
 
     span {
-        margin: 0 20px;
+        padding: 0 20px;
+    }
+
+    .mat-list-item-ripple {
+        margin: 0;
+        padding: 0;
+        border-radius: 5px;
     }
 }
 
