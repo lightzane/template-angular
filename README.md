@@ -4,9 +4,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## With Bootstrap
 
+https://getbootstrap.com/docs/5.2/customize/sass
+
 ```
 npm i bootstrap@5
 ```
+
+**Option A: All bootstrap**
+
+```scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+```
+
+**Option B: Include parts of bootstrap**
 
 > **Notice** not to name @angular/material variables with the same variable name that bootstrap uses
 
@@ -14,23 +30,33 @@ npm i bootstrap@5
 // Option B: Include parts of Bootstrap
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "~bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
 
 // 3. Include remainder of required Bootstrap stylesheets
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-//// @import "~bootstrap/scss/root"; // generate :root color palettes and fonts
+@import "../node_modules/bootstrap/scss/variables";
 
-// 4. Include any optional Bootstrap CSS as needed
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/utilities"; // utility classes for showing, hiding, aligning, and spacing content
-@import "~bootstrap/scss/containers";
-@import "~bootstrap/scss/grid"; // column and rows (e.g. .col-md-4)
+// 4. Include any default map overrides here
 
-// 5. Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/root"; // generate :root color palettes and fonts
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities"; // utility classes for showing, hiding, aligning, and spacing content
+@import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid"; // column and rows (e.g. .col-md-4)
+// @import "../node_modules/bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
 ```
 
 ## Example Bootstrap Utilities
@@ -81,6 +107,7 @@ Where size is one of:
 
 See more details:
 
+-   https://getbootstrap.com/docs/5.2/customize/sass/
 -   https://getbootstrap.com/docs/5.1/utilities
 -   https://getbootstrap.com/docs/5.1/utilities/flex/
 -   https://getbootstrap.com/docs/5.1/utilities/spacing/
